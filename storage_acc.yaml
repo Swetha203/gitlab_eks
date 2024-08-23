@@ -1,0 +1,14 @@
+#PersistentVolume is a piece of storage in the Kubernetes cluster that has been provisioned by an administrator or dynamically provisioned using a StorageClass
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitlab-pv
+  namespace: gitlab
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/gitlab
+  storageClassName: ebs-sc
