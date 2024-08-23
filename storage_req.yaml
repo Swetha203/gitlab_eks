@@ -1,0 +1,13 @@
+#PVC is a request to use a portion of the created storage in cluster.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gitlab-pvc
+  namespace: gitlab
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: ebs-sc
